@@ -135,4 +135,5 @@ Tipos de `User`, `Ticket`, etc.: [`@secure-crm/shared`](../../packages/shared/sr
   tráfico del navegador; las llamadas salen hacia `:4000`.
 - No hace falta un `.env` dentro de `apps/web` si usas los defaults.
 - Guía del alumno (ZAP, Burp, CVSS, tablero de retos):
-  [`docs/guia-laboratorio.html`](../../docs/guia-laboratorio.html).
+  [`docs/dast/index.html`](../../docs/dast/index.html).
+  La portada del sitio está en [`docs/index.html`](../../docs/index.html).

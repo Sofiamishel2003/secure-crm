@@ -55,7 +55,7 @@ La rama `main` se mantiene **vulnerable a propósito**. El flujo esperado es:
 
 1. Haz un fork / clona este repositorio.
 2. Crea tu rama: `git checkout -b correcciones-<tu-equipo>`.
-3. Completa la Parte 1 con la [guía del laboratorio](docs/guia-laboratorio.html).
+3. Completa la Parte 1 con la [guía DAST](docs/dast/index.html).
 4. Implementa las correcciones en el código de tu rama (mínimo 2, según la rúbrica).
 5. Reevalúa con ZAP/Burp y recalcula el CVSS.
 6. Abre un **Pull Request** contra este repo para que el instructor revise tus cambios.
@@ -69,7 +69,9 @@ La rama `main` se mantiene **vulnerable a propósito**. El flujo esperado es:
 
 | Recurso | Para qué sirve |
 |---------|----------------|
-| [Guía del laboratorio](docs/guia-laboratorio.html) | Tutoriales de ZAP / Burp / CVSS y tablero de retos |
+| [Sitio del laboratorio](docs/index.html) | Qué es Secure CRM y cómo levantarlo |
+| [Guía DAST](docs/dast/index.html) | Tutoriales de ZAP / Burp / CVSS y tablero de retos |
+| [Guía SAST](docs/sast/index.html) | Fases 1 y 2: SonarQube, Semgrep, dependencias y pruebas |
 | [README de la API](apps/api/README.md) | Endpoints, semilla y cómo correr solo el backend |
 | [README de la web](apps/web/README.md) | Rutas, variables `NEXT_PUBLIC_*` y cómo corre el frontend |
 | [OWASP ZAP](https://www.zaproxy.org/) | Proxy + escaneo automático (DAST) |
@@ -106,7 +108,7 @@ Trabaja contra **tu** instancia local. Para cada hallazgo documenta: dónde vive
 categoría OWASP, CWE, evidencia (captura o respuesta HTTP) y vector CVSS v3.1.
 
 El tablero completo, con pistas graduales, está en la
-[guía del laboratorio](docs/guia-laboratorio.html). Resumen de lo que debes buscar:
+[guía DAST](docs/dast/index.html). Resumen de lo que debes buscar:
 
 | # | Hallazgo (enunciado) | OWASP | CWE |
 |---|----------------------|-------|-----|
@@ -172,8 +174,10 @@ secure-crm/
 │  └─ web/          Next.js + TypeScript + Tailwind   (:3000)  → apps/web/README.md
 ├─ packages/
 │  └─ shared/       Tipos TypeScript compartidos
-├─ docs/
-│  └─ guia-laboratorio.html
+├─ docs/                 sitio estático (GitHub Pages, carpeta /docs)
+│  ├─ index.html         portada: qué es Secure CRM
+│  ├─ dast/index.html    laboratorio DAST (ZAP, Burp, CVSS)
+│  └─ sast/index.html    laboratorio SAST, fases 1 y 2
 ├─ docker-compose.yml
 └─ .env.example
 ```
@@ -187,6 +191,9 @@ secure-crm/
 - **Reset de datos:** `pnpm seed` borra y recrea usuarios y tickets.
 - **Instructor:** el mapa vuln → archivo → fix de referencia no forma parte del
   material del estudiante.
+- **Sitio:** la carpeta `docs/` es la guía publicable. En GitHub: Settings →
+  Pages → rama `main` → carpeta `/docs`. La portada queda en
+  `https://<org>.github.io/secure-crm/`.
 
 ---
 
